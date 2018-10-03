@@ -84,10 +84,11 @@ public class BankAccount {
 
     /**
      * sets the bank account balance
+     * @param accountBalance  - the account balance
      * @return - the new account balance
      */
-    public setAccountBalance(final double accountBalance) {
-
+    public void setAccountBalance(final double accountBalance) {
+     this.accountBalance = accountBalance;
     }
 
     /**

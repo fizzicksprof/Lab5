@@ -48,10 +48,10 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
-        if (amount < 0) {
+            if (amount < 0) {
             return false;
         } else return true;
-
+            bankAccount.setAccountBalance();
     }
 
     /**
@@ -96,10 +96,7 @@ public class Bank {
      * @return the total number of accounts
      */
     public static int getNumberOfAccount() {
-        return accountNumber;
-        /*
-         * Implement this function
-         */
+        return totalAccounts;
     }
 
     /**
