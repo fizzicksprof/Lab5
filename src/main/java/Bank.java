@@ -8,9 +8,14 @@
  * @see <a href="https://cs125.cs.illinois.edu/lab/5/">Lab 5 Description</a>
  */
 public class Bank {
+    /**
+     * bank class's name
+     */
+    private String bankName;
 
-    public String bankName;
-
+    /**
+     * the object with the same name as the class name, the constructor
+     */
     public Bank() {
         bankName = "Illini Bank";
     }
@@ -26,9 +31,10 @@ public class Bank {
      * @return boolean
      */
     public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+
+        if (bankAccount.getAccountBalance() < amount) {
+            return false;
+        } else return true;
     }
 
     /**
@@ -42,9 +48,10 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+        if (amount < 0) {
+            return false;
+        } else return true;
+
     }
 
     /**
@@ -79,13 +86,17 @@ public class Bank {
          */
     }
 
-    public static int totalAccounts = 0;
+    /**
+     * the number of total accounts
+     */
+    private static int totalAccounts = 0;
     /**
      * Uses static variable to get number of bank accounts opened.
      *
      * @return the total number of accounts
      */
     public static int getNumberOfAccount() {
+        return accountNumber;
         /*
          * Implement this function
          */
@@ -107,7 +118,7 @@ public class Bank {
         System.out.println("Bank account for John Doe created");
 
         BankAccount account2 = new BankAccount("Jony Ive", BankAccount.BankAccountType.STUDENT);
-        System.out.println("Bank account for Johy Ive created\n\n");
+        System.out.println("Bank account for John Ive created\n\n");
 
         // Deposit money to both accounts and print new balance
         bank.depositMoney(account1, 1000.0);
