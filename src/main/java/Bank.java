@@ -48,10 +48,8 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
-            if (amount < 0) {
-            return false;
-        } else return true;
-            bankAccount.setAccountBalance();
+            bankAccount.deposit(amount);
+            return true;
     }
 
     /**
@@ -81,9 +79,7 @@ public class Bank {
      */
 
     public void changeOwnerName(final BankAccount bankAccount, final String name) {
-        /*
-         * Implement this function
-         */
+        bankAccount.setOwnerName(name);
     }
 
     /**

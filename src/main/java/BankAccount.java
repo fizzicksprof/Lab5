@@ -98,4 +98,30 @@ public class BankAccount {
     public int getAccountNumber() {
         return accountNumber;
     }
+
+    /**
+     * gets the owner's name
+     * @return
+     */
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    /**
+     * changes the name
+     * @param name - name parameter
+     * @return
+     */
+    public String setOwnerName(final String name) {
+        ownerName = name;
+    }
+
+    /**
+     * deposit function
+     * @param amount - amount deposited in account
+     */
+
+    public void deposit(final double amount) {
+        this.accountBalance = this.getAccountBalance() + amount;
+    }
 }
